@@ -1,15 +1,86 @@
+<!-- 
+    Cambel - HTML Structure + CSS Styling
+    Espartero - Backend Functions
+    Fallarme - Backend Functions
+    Gelvezon - CSS Styling
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lab 5 - Student Records</title>
     <link rel="stylesheet" type="text/css" href="lab5_styles.css">
 </head>
 
 <body>
+    <h1>Student Records System</h1>
+
+    <!-- Date Button -->
+    <button onclick="time_now()"> Show Current Date</button>
+    <p id="dateOutput"></p>
+
+    <hr>
+
+    <!--------------- ADD STUDENT SECTION --------------->
+    <h2>Add Student</h2>
+
+    <!-- Student Information -->
+    <form id="studentForm">
+        <!-- Textfields -->
+        <label>Name</label>
+        <input type="text" id="studentID"><br>
+
+        <label>Age</label>
+        <input type="text" id="studentAge"><br>
+
+        <label>Email</label>
+        <input type="text" id="studentEmail"><br>
+
+        <!-- Dropdown Menu -->
+        <label>Course</label>
+        <select id="Course">
+            <option>BA Food Appreciation</option>
+            <option>BA Applied Poetry of the Future</option>
+            <option>BS Computer Repair Shop</option>
+            <option>BS Video Gaming</option>
+            <option>BS Installing and Downloading</option>
+        </select> <br>
+
+        <!-- Submit Button -->
+        <button type="button" onclick="add_student()">Submit</button>
+    </form>
+
+    <!-- Error Display -->
+    <ul id="formError"></ul>
+
+    <!--------------- SHOW STUDENT SECTION --------------->
+    <h2>Search Student</h2>
+
+    <input type="text" id="searchID" placeholder="Enter Student ID"><br>
+    <button type="button" onclick="find_student()">Search Student</button>
+
+    <hr>
+
+    <!--------------- DISPLAY STUDENT SECTION --------------->
+    <h2>Display Students</h2>
+    <button type="button" onclick="display_student_list()">Display All Students</button>
+
+    <div id="displayOutput"></div>
+
+    <hr>
+
+    <!--------------- FOOTER SECTION --------------->
+    <footer class="footer">
+        <p>© 2026 Student Records System [CMSC 126] | All Rights Reserved</p>
+        <p>Developed by: Git Git Aww</p>
+        <p>Members: E. Cambel, J. Espartero, J. Fallarme, M. Gelvezon</p>
+    </footer>
+
     <script src="lab5_scripts.js"></script>
 </body>
+
 
 </html>
