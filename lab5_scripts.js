@@ -7,14 +7,29 @@
 
 function time_now() {
     // code here
-    document.getElementById("dateOutput").innerHTML = "For checking";
-}
+    if (window.clockInterval) return;
 
+    const update = () => {
+        const now = new Date();
+    
+    const date = now.toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'});
+    const weekday = now.toLocaleDateString(undefined, {weekday: 'long'});
+
+    const timeOptions = { hour: 'numeric', minute: '2-digit', hour12: true };
+    const timeString = now.toLocaleTimeString(undefined, timeOptions);
+
+    const output = document.getElementById('dateOutput');
+    output.innerHTML = `Today is ${date}, ${weekday}. <br>  Current time is ${timeString}.`;  
+    };
+
+    update();
+    window.clockInterval = setInterval(update, 1000);
+}
 
 function add_student() {
     // code here
 }
-
+ 
 function find_student() {
     // code here
 }
