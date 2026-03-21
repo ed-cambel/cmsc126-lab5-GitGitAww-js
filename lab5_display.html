@@ -1,0 +1,49 @@
+<!-- 
+    Cambel - HTML Structure + CSS Styling
+    Espartero - Backend Functions
+    Fallarme - Backend Functions
+    Gelvezon - CSS Styling
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <div class="navBar">
+        <a class="navigation" href="lab5_home.html">Home</a>
+        <a class="navigation" href="lab5_display.html">Student List</a>
+        <a class="navigation" href="lab5_about.html">About</a>
+    </div>
+
+    <!--------------- SHOW STUDENT SECTION --------------->
+    <h2>Search Student</h2>
+
+    <input type="text" id="searchID" placeholder="Enter Student ID"><br>
+    <button type="button" onclick="find_student()">Search Student</button>
+
+    <!--------------- DISPLAY STUDENT SECTION --------------->
+    <h2>Display Students</h2>
+    <button type="button" onclick="display_student_list()">Display All Students</button>
+
+    <div id="displayOutput"></div>
+
+    <hr>
+
+    <script src="lab5_scripts.js"></script>
+</body>
+
+<!--------------- FOOTER SECTION --------------->
+<footer class="footer">
+    <p>© 2026 Student Records System [CMSC 126] | All Rights Reserved</p>
+    <p>Developed by: Git Git Aww</p>
+    <p>Members: E. Cambel, J. Espartero, J. Fallarme, M. Gelvezon</p>
+</footer>
+
+</html>
