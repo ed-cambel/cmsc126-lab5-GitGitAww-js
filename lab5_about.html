@@ -17,71 +17,67 @@
 
 <body>
     <!-- Navigation Bar -->
-    <div class="navBar">
-        <a class="navigation" href="lab5_home.html">Home</a>
-        <a class="navigation" href="lab5_display.html">Student List</a>
-        <a class="navigation" href="lab5_about.html">About</a>
-    </div>
+    <nav class="nav_bar">
+        <div class="nav_links">
+            <img id="logo" src="images/logo.png">
 
-    <!--------------- SHOW STUDENT SECTION --------------->
-    <h2>Search Student</h2>
+            <a class="navigation" href="lab5_home.html">HOME</a>
+            <a class="navigation" href="lab5_display.html">DISPLAY STUDENTS</a>
+            <a class="navigation" href="lab5_about.html">ABOUT</a>
+        </div>
 
-    <input type="text" id="searchID" placeholder="Enter Student ID"><br>
-    <button type="button" onclick="find_student()">Search Student</button>
+        <div class="nav_search">
+            <input type="text" id="search_id" placeholder="Enter Student ID"><br>
+            <button class="search_button" type="button" onclick="find_student()">Search Student</button>
+        </div>
+    </nav>
 
-    <hr>
-    <table>
-        <!-- Pictures of each member -->
-        <tr>
-            <td> <img src="images/placeholder.png" hspace="20" width="300" height="300"> </th>
-            <td> <img src="images/placeholder.png" hspace="20" width="300" height="300"> </th>
-            <td> <img src="images/placeholder.png" hspace="20" width="300" height="300"> </th>
-            <td> <img src="images/placeholder.png" hspace="20" width="300" height="300"> </th>
-        </tr>
+    <main>
+        <table>
+            <!-- Pictures of each member -->
+            <tr>
+                <td> <img src="images/placeholder.png" hspace="20" width="300" height="300"> </th>
+                <td> <img src="images/placeholder.png" hspace="20" width="300" height="300"> </th>
+                <td> <img src="images/placeholder.png" hspace="20" width="300" height="300"> </th>
+                <td> <img src="images/placeholder.png" hspace="20" width="300" height="300"> </th>
+            </tr>
 
-        <!-- Names of each member -->
-        <tr>
-            <td>Edriellen Mey Cambel</td>
-            <td>Marie Toney Fay Gelvezon</td>
-            <td>John Matthew Fallarme</td>
-            <td>Jasper Espartero</td>
-        </tr>
-        <tr>
-            <td><br></td>
-            <td><br></td>
-            <td><br></td>
-            <td><br></td>
-        </tr>
+            <!-- Names of each member -->
+            <tr>
+                <td>Edriellen Mey Cambel</td>
+                <td>Marie Toney Fay Gelvezon</td>
+                <td>John Matthew Fallarme</td>
+                <td>Jasper Espartero</td>
+            </tr>
+            <tr>
+                <td><br></td>
+                <td><br></td>
+                <td><br></td>
+                <td><br></td>
+            </tr>
 
-        <!-- Contribution of each member -->
-        <tr>
-            <td> Front-End Development</td>
-            <td> Front-End Development</td>
-            <td> Back-End Development</td>
-            <td> Back-End Development</td>
-        </tr>
-    </table>
-    </center>
-
-    <br> <br>
+            <!-- Contribution of each member -->
+            <tr>
+                <td> Front-End Development</td>
+                <td> Front-End Development</td>
+                <td> Back-End Development</td>
+                <td> Back-End Development</td>
+            </tr>
+        </table>
+    </main>
 
     <!-- Github Repository Link -->
-    <center>
-        <h3>
-            <a href="https://github.com/ed-cambel/cmsc126-lab5-GitGitAww-js"> Click Here to Visit the Github Repository
-            </a>
-        </h3>
-    </center>
-
-    <br>
-
-    <hr>
+    <h3>
+        <a href="https://github.com/ed-cambel/cmsc126-lab5-GitGitAww-js"> Click Here to Visit the Github Repository
+        </a>
+    </h3>
 
     <script src="lab5_scripts.js"></script>
 </body>
 
 <!--------------- FOOTER SECTION --------------->
 <footer class="footer">
+    <hr>
     <p>© 2026 Student Records System [CMSC 126] | All Rights Reserved</p>
     <p>Developed by: Git Git Aww</p>
     <p>Members: E. Cambel, J. Espartero, J. Fallarme, M. Gelvezon</p>
