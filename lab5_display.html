@@ -43,19 +43,58 @@
             <h2 id="title">Display Students</h2>
             <button type="button" class="search_button" onclick="display_student_list()">Display All Students</button>
 
+            <div class = "table_container">
+                <table id="studentTable">
+                    <thead>
+                        <tr>
+                            <th>Student No.</th>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Email</th>
+                            <th>Course</th>
+                        </tr>
+
+                        <!--Example only-->
+                        <tr>
+                            <td>202416169</td>
+                            <td>John Doe</td>
+                            <td>20</td>
+                            <td>john.doe@example.com</td>
+                            <td>Computer Science</td>
+                        </tr>
+                        <tr>
+                            <td>202416169</td>
+                            <td>John Doe</td>
+                            <td>20</td>
+                            <td>john.doe@example.com</td>
+                            <td>Computer Science</td>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <!-- Student records will be dynamically inserted here -->
+                         <!-- <tr>
+                            <td colspan = "5"> Click "Display All Students" to view records</td>
+                         </tr> -->
+                    </tbody>
+                </table>
+            </div>
+
             <div id="displayOutput"></div>
+
         </header>
     </main>
 
     <script src="lab5_scripts.js"></script>
-</body>
 
-<!--------------- FOOTER SECTION --------------->
+    <!--------------- FOOTER SECTION --------------->
 <footer class="footer">
     <hr>
     <p>© 2026 Student Records System [CMSC 126] | All Rights Reserved</p>
     <p>Developed by: Git Git Aww</p>
     <p>Members: E. Cambel, J. Espartero, J. Fallarme, M. Gelvezon</p>
 </footer>
+</body>
+
+
 
 </html>
