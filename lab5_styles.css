@@ -6,6 +6,21 @@
 */
 
 /* ======= Navigation Bar =======*/
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  background-image: url("images/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
 #logo {
   max-width: 60px;
   width: auto;
@@ -14,112 +29,177 @@
 }
 
 .nav_bar {
-  background-color: #d1d1d1;
+  background-color: rgba(225, 225, 225, 0.5);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 30px 15px 20px;
+  letter-spacing: 3px;
 }
 
 .nav_links {
   display: flex;
   align-items: center;
+  font-family: "Montserrat";
+  font-size: 22px;
+  font-weight: bolder;
+  gap: 5px;
 }
 
 .nav_links .navigation {
   text-decoration: none;
-  font-size: 20px;
-  margin-right: 25px;
+  font-size: 18px;
+  color: #043303;
+  transition: 0.3s;
+  border-radius: 10px;
+  padding: 10px 15px;
+  border: 3px solid transparent;
+  margin-right: 5px;
+  transition:
+    border-color 0.3s ease,
+    background-color 0.3s ease;
 }
 
+.nav_links .navigation:hover {
+  border-color: #043303;
+}
+
+.home_page .nav_bar .navigation[href="lab5_home.html"] {
+  border-color: #043303;
+  color: #043303;
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+
+.nav_bar:hover .navigation:not(:hover) {
+  background-color: rgba(225, 225, 225, 0);
+  color: #043303;
+  border-color: transparent;
+}
 .nav_search {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 7px;
+  font-family: "Montserrat";
 }
 
 #search_id {
-  padding: 10px;
+  font-family: "Montserrat";
+  border: 3px solid white;
+  border-radius: 10px;
+  outline: none;
+  padding: 10px 6px;
   width: 200px;
-  border: none;
-  font-size: 20px;
+  font-size: 18px;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+#search_id:focus {
+  border-color: #043303;
+  box-shadow: 0 0 5px rgba(4, 51, 3, 0.2);
+}
+
+#search_id::placeholder {
+  color: #888;
+  font-style: italic;
+  font-size: 15px;
 }
 
 .search_button {
-  width: 150px;
-  height: 38px;
-  border: none;
-  border-radius: 4px;
+  font-family: "Montserrat";
+  font-size: 13px;
+  color: #043303;
+  padding: 5px 5px;
+  border-radius: 15px;
+  border: 3px solid #043303;
+  background-color: transparent;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  width: 100px;
+  height: 47px;
   cursor: pointer;
+
+  transition: background-color 0.3s ease color 0.3s ease transform 0.1s ease;
 }
 
+.search_button:hover {
+  background-color: #043303;
+  color: white;
+}
+
+.search_button:active {
+  transform: scale(0.95);
+}
 /* ======= HOME PAGE =======*/
-#home_page .page_header {
-  text-align: center;
-  margin-top: 50px;
-}
+.home_page {
+  .page_header {
+    text-align: center;
+    margin-top: 50px;
+  }
 
-#home_page .page_header h1 {
-  font-size: 40px;
-  margin-bottom: 5px;
-}
+  .page_header h1 {
+    font-size: 40px;
+    margin-bottom: 5px;
+  }
 
-#home_page .page_header p {
-  margin-top: 0;
-  font-size: 15px;
-}
+  .page_header p {
+    margin-top: 0;
+    font-size: 15px;
+  }
 
-/* ======= Page Header =======*/
-#home_page .add_student_forms {
-  width: 450px;
-  margin: 40px auto;
-  padding: 40px;
-}
+  .add_student_forms {
+    width: 450px;
+    margin: 40px auto 0 auto;
+    padding: 10px;
+  }
 
-#home_page .add_student_forms h2 {
-  text-align: 50%;
-  font-size: 20px;
-  margin-top: 0;
-  margin-bottom: 30px;
-}
+  .add_student_forms h2 {
+    text-align: 50%;
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
 
-/* ======= Form Inputs =======*/
-#home_page #student_form {
-  display: grid;
-  grid-template-columns: 80px 1fr;
-  row-gap: 20px;
-  align-items: center;
-}
+  /* ======= Form Inputs =======*/
+  #student_form {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    row-gap: 20px;
+    align-items: center;
+  }
 
-#home_page #student_form label {
-  font-size: 15px;
-}
+  #student_form label {
+    font-size: 15px;
+  }
 
-#home_page #student_form input,
-#home_page #student_form select {
-  padding: 12px;
-  font-size: 12px;
-  width: 100%;
-  box-sizing: border-box;
-}
+  #student_form input,
+  #student_form select {
+    padding: 12px;
+    font-size: 12px;
+    width: 100%;
+    box-sizing: border-box;
+  }
 
-#home_page #student_form button {
-  grid-column: 1 / -1;
-  width: 140px;
-  height: 40px;
-  border-radius: 4px;
-  font-size: 16px;
-  margin: 10px auto 0;
-  justify-self: center;
-  cursor: pointer;
-}
+  #student_form button {
+    grid-column: 1 / -1;
+    width: 140px;
+    height: 40px;
+    border-radius: 4px;
+    font-size: 16px;
+    margin: 10px auto 0;
+    justify-self: center;
+    cursor: pointer;
+  }
 
-/* ======= Error Display =======*/
-#home_page #formError {
-  color: red;
-  font-size: 14px;
-  margin-top: 20px;
-  padding-left: 20px;
+  /* ======= Error Display =======*/
+  #form_error {
+    color: red;
+    font-size: 14px;
+    margin-top: 20px;
+    padding-left: 20px;
+  }
 }
 
 /* ======= DISPLAYE PAGE =======*/
@@ -136,17 +216,20 @@
 /* ======= Footer Section =======*/
 .footer {
   text-align: center;
-  padding: 30px;
-  color: #888888;
-  font-size: 0.9rem;
-  margin-top: 40px;
+  padding: 15px;
+  color: white;
+  font-size: 13px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px 15px 20px;
+  font-family: "Montserrat";
 }
 
 .footer hr {
   border: 0;
   height: 1px;
-  background-color: #e0e0e0;
-  margin-bottom: 20px;
+  background-color: white;
+  margin-bottom: 10px;
 }
 
 .footer p {
