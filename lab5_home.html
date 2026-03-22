@@ -13,75 +13,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab 5 - Student Records</title>
     <link rel="stylesheet" type="text/css" href="lab5_styles.css">
+    <link rel="stylesheet" href="">
+    <script src="lab5_scripts.js"></script>
 </head>
 
-<body>
+<body id="home_page">
     <!-- Navigation Bar -->
-    <div class="navBar">
-        <a class="navigation" href="lab5_home.html">Home</a>
-        <a class="navigation" href="lab5_display.html">Student List</a>
-        <a class="navigation" href="lab5_about.html">About</a>
-    </div>
+    <nav class="nav_bar">
+        <div class="nav_links">
+            <img id="logo" src="images/logo.png">
 
-    <!--------------- SHOW STUDENT SECTION --------------->
-    <h2>Search Student</h2>
+            <a class="navigation" href="lab5_home.html">HOME</a>
+            <a class="navigation" href="lab5_display.html">DISPLAY STUDENTS</a>
+            <a class="navigation" href="lab5_about.html">ABOUT</a>
+        </div>
 
-    <input type="text" id="searchID" placeholder="Enter Student ID"><br>
-    <button type="button" onclick="find_student()">Search Student</button>
+        <div class="nav_search">
+            <input type="text" id="search_id" placeholder="Enter Student ID"><br>
+            <button class="search_button" type="button" onclick="find_student()">Search Student</button>
+        </div>
+    </nav>
 
-    <hr>
+    <main>
+        <header class="page_header">
+            <h1 id="title">Student Records System</h1>
 
-    <header>
-        <h1 id="title">Student Records System</h1>
-    </header>
+            <!-- Date Button -->
+            <button onclick="time_now()"> Show Current Date</button>
+            <p id="date_output"></p>
+        </header>
 
-    <!-- Date Button -->
-    <button onclick="time_now()"> Show Current Date</button>
-    <p id="dateOutput"></p>
+        <!--------------- ADD STUDENT SECTION --------------->
+        <div class="add_student_forms">
+            <h2>Add Student</h2>
 
-    <!--------------- ADD STUDENT SECTION --------------->
-    <div class="addStudent">
-        <h2>Add Student</h2>
+            <!-- Student Information -->
+            <form id="student_form">
+                <!-- Textfields -->
+                <label>Name</label>
+                <input type="text" id="student_id">
 
-        <!-- Student Information -->
-        <form id="studentForm">
-            <!-- Textfields -->
-            <label>Name</label>
-            <input type="text" id="studentID"><br>
+                <label>Age</label>
+                <input type="text" id="student_age">
 
-            <label>Age</label>
-            <input type="text" id="studentAge"><br>
+                <label>Email</label>
+                <input type="text" id="student_email">
 
-            <label>Email</label>
-            <input type="text" id="studentEmail"><br>
+                <!-- Dropdown Menu -->
+                <label>Course</label>
+                <select id="course">
+                    <option>BA Food Appreciation</option>
+                    <option>BA Applied Poetry of the Future</option>
+                    <option>BS Computer Repair Shop</option>
+                    <option>BS Video Gaming</option>
+                    <option>BS Installing and Downloading</option>
+                </select>
 
-            <!-- Dropdown Menu -->
-            <label>Course</label>
-            <select id="Course">
-                <option>BA Food Appreciation</option>
-                <option>BA Applied Poetry of the Future</option>
-                <option>BS Computer Repair Shop</option>
-                <option>BS Video Gaming</option>
-                <option>BS Installing and Downloading</option>
-            </select> <br>
+                <!-- Submit Button -->
+                <button type="button" onclick="add_student()">Submit</button>
+            </form>
+            <!-- Error Display -->
+            <ul id="formError"></ul>
+        </div>
+    </main>
 
-            <!-- Submit Button -->
-            <button type="button" onclick="add_student()">Submit</button>
-        </form>
-        <!-- Error Display -->
-        <ul id="formError"></ul>
-    </div>
+    <!--------------- FOOTER SECTION --------------->
+    <footer class="footer">
+        <hr>
 
-    <hr>
-    
+        <p>© 2026 Student Records System [CMSC 126] | All Rights Reserved</p>
+        <p>Developed by: Git Git Aww</p>
+        <p>Members: E. Cambel, J. Espartero, J. Fallarme, M. Gelvezon</p>
+    </footer>
+
     <script src="lab5_scripts.js"></script>
 </body>
-
-<!--------------- FOOTER SECTION --------------->
-<footer class="footer">
-    <p>© 2026 Student Records System [CMSC 126] | All Rights Reserved</p>
-    <p>Developed by: Git Git Aww</p>
-    <p>Members: E. Cambel, J. Espartero, J. Fallarme, M. Gelvezon</p>
-</footer>
 
 </html>
