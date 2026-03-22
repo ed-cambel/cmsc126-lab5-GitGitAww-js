@@ -14,6 +14,7 @@
     <title>Lab 5 - Student Records</title>
     <link rel="stylesheet" type="text/css" href="lab5_styles.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
 
     <script src="lab5_scripts.js"></script>
 </head>
@@ -37,10 +38,10 @@
 
     <main>
         <header class="page_header">
-            <h1 id="title">Student Records System</h1>
+            <h1 id="title">STUDENT RECORD SYSTEM</h1>
 
             <!-- Date Button -->
-            <button onclick="time_now()"> Show Current Date</button>
+            <button class="search_button" type="button" onclick="time_now()"> Show Current Date</button>
             <p id="date_output"></p>
         </header>
 
@@ -51,17 +52,17 @@
             <!-- Student Information -->
             <form id="student_form">
                 <!-- Textfields -->
-                <label>Name</label>
-                <input type="text" id="student_id">
+                <label>NAME</label>
+                <input type="text" id="student_id" placeholder="Enter name">
 
-                <label>Age</label>
-                <input type="text" id="student_age">
+                <label>AGE</label>
+                <input type="text" id="student_age" placeholder="Enter age">
 
-                <label>Email</label>
-                <input type="text" id="student_email">
+                <label>EMAIL</label>
+                <input type="text" id="student_email" placeholder="Enter email">
 
                 <!-- Dropdown Menu -->
-                <label>Course</label>
+                <label>COURSE</label>
                 <select id="course">
                     <option>BA Food Appreciation</option>
                     <option>BA Applied Poetry of the Future</option>
