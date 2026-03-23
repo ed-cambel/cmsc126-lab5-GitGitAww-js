@@ -109,7 +109,30 @@ function showError(message){
 }
  
 function find_student() {
-    // code here
+    // find student through id property and display solely in table
+    const search_id = document.getElementById('search_id').value;
+    const found_student = studentList.find(student => student.id === search_id)
+
+    if (found_student) {
+        const tableBody = document.getElementById('tableBody');
+        tableBody.innerHTML = "";
+        const row = document.createElement('tr');
+
+        row.innerHTML = `
+            <td>${found_student.id}</td>
+            <td>${found_student.name}</td>
+            <td>${found_student.age}</td>
+            <td>${found_student.email}</td>
+            <td>${found_student.course}</td>
+        `;
+        tableBody.appendChild(row);
+
+    } else {
+        alert('Student record does not exist');
+    }
+
+    console.log(search_id);
+    console.log(found_student);
 }
 
 function display_student_list() {
