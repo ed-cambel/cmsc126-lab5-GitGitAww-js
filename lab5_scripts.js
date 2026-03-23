@@ -6,28 +6,36 @@
 */
 
 function time_now() {
-    if (window.clockInterval) return;
+    //checks if the clock is already on the screen
+    if (window.clockInterval) return;   
 
-    const update = () => {
+    //new variable update
+    const update = () => {      
         const now = new Date();
     
+    //Date 
     const date = now.toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'});
     const weekday = now.toLocaleDateString(undefined, {weekday: 'long'});
 
+    //Time
     const timeOptions = { hour: 'numeric', minute: '2-digit', hour12: true };
     const timeString = now.toLocaleTimeString(undefined, timeOptions);
 
+    //Display
     const output = document.getElementById('date_output');
     output.innerHTML = `Today is ${date}, ${weekday}. <br>  Current time is ${timeString}.`;  
     };
 
-    update();
+    //updates the clock every 1000 millisecods
+    update(); 
     window.clockInterval = setInterval(update, 1000);
 }
 
+//Local Storage
 const studentList = JSON.parse(localStorage.getItem('students')) || [];
 
 function add_student() {
+    //variable initialization
     const nameInput = document.getElementById('student_id');
     const nameValue = nameInput.value.trim();
 
@@ -44,11 +52,10 @@ function add_student() {
 
     //Reset UI
     errorList.innerHTML = "";
-    nameInput.style.border = "1px solid #ccc";
 
     //Validation
     if (nameValue == "") {
-        showError("Please enter a name.")
+        showError("Please enter a name.");
         return;
     }
 
@@ -84,8 +91,10 @@ function add_student() {
         course: courseValue 
     };
 
+    //Adds the newStudent to the array list
     studentList.push(newStudent);
 
+    //Saves the data into the Local Storage
     localStorage.setItem('students', JSON.stringify(studentList));
 
     alert("Student '" + nameValue + "' has been added with ID: " + newStudent.id);
@@ -100,8 +109,8 @@ function add_student() {
 }
 
 function showError(message){
+    //Error Handling
     const errorList = document.getElementById('form_error');
-    const nameInput = document.getElementById('student_id');
 
     const li = document.createElement('li');
     li.textContent = message;
@@ -109,9 +118,6 @@ function showError(message){
     li.style.listStyle = "none";
     li.style.textAlign = "center";
     errorList.appendChild(li);
-
-    nameInput.style.border  = "2px solid red";
-
 }
  
 function find_student() {
@@ -142,17 +148,15 @@ function find_student() {
 }
 
 function display_student_list() {
-    const tableBody = document.getElementById('tableBody');
+    const tableBody = document.getElementById('tableBody'); 
 
-    if (!tableBody) return; 
-    
-    tableBody.innerHTML = "";
-
+    //checks if the array has an item
     if (studentList.length === 0) {
         tableBody.innerHTML = '<tr><td colspan="5" style="text-align:center;">No students registered yet.</td></tr>';
         return;
     }
 
+    //iterates through the studentList
     studentList.forEach((student) => {
         const row = document.createElement('tr');
 
@@ -166,10 +170,6 @@ function display_student_list() {
         
         tableBody.appendChild(row);
     });
-}
-
-function validate_form() {
-    // code here
 }
 
 function generate_student_id() {
