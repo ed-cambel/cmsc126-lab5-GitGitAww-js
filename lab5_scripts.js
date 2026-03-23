@@ -18,7 +18,7 @@ function time_now() {
     const timeOptions = { hour: 'numeric', minute: '2-digit', hour12: true };
     const timeString = now.toLocaleTimeString(undefined, timeOptions);
 
-    const output = document.getElementById('dateOutput');
+    const output = document.getElementById('date_output');
     output.innerHTML = `Today is ${date}, ${weekday}. <br>  Current time is ${timeString}.`;  
     };
 
@@ -28,6 +28,10 @@ function time_now() {
 
 function add_student() {
     // code here
+    const array = [];
+
+    const submit = document.getElementById('form_error');
+    submit.innerHTML = 'Form Error';
 }
  
 function find_student() {
