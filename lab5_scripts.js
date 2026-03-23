@@ -25,7 +25,7 @@ function time_now() {
     window.clockInterval = setInterval(update, 1000);
 }
 
-const studentList = [];
+const studentList = JSON.parse(localStorage.getItem('students')) || [];
 
 function add_student() {
     const nameInput = document.getElementById('student_id');
@@ -76,21 +76,27 @@ function add_student() {
         return;
     }
 
-    studentList.push({ 
-        name: nameValue, 
+    const newStudent = { 
+        id: generate_student_id(),
+        name: nameValue,
         age: ageInput, 
         email: emailInput,
-        course: courseValue
-    });
+        course: courseValue 
+    };
 
-    console.log("Success!! Adding student: ", studentList);
-    alert("Student '" + nameValue + "' has been added.");
+    studentList.push(newStudent);
+
+    localStorage.setItem('students', JSON.stringify(studentList));
+
+    alert("Student '" + nameValue + "' has been added with ID: " + newStudent.id);
 
     //clear inputs
     nameInput.value = ''; 
     document.getElementById('student_age').value = '';
     document.getElementById('student_email').value = '';
     courseInput.selectedIndex = 0;
+
+    display_student_list();
 }
 
 function showError(message){
@@ -113,7 +119,30 @@ function find_student() {
 }
 
 function display_student_list() {
-    // code here
+    const tableBody = document.getElementById('tableBody');
+
+    if (!tableBody) return; 
+    
+    tableBody.innerHTML = "";
+
+    if (studentList.length === 0) {
+        tableBody.innerHTML = '<tr><td colspan="5" style="text-align:center;">No students registered yet.</td></tr>';
+        return;
+    }
+
+    studentList.forEach((student) => {
+        const row = document.createElement('tr');
+
+        row.innerHTML = `
+            <td>${student.id}</td>
+            <td>${student.name}</td>
+            <td>${student.age}</td>
+            <td>${student.email}</td>
+            <td>${student.course}</td>
+        `;
+        
+        tableBody.appendChild(row);
+    });
 }
 
 function validate_form() {
@@ -125,6 +154,6 @@ function generate_student_id() {
 }
 
 function validate_student_id() {
-    // code here
+   // code here
 }
 
