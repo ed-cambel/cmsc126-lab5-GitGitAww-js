@@ -121,10 +121,19 @@ function validate_form() {
 }
 
 function generate_student_id() {
-    // code here
+    // generate random id according to the format
+    let id;
+    do {
+    const year = 2024;
+    const random = Math.floor(Math.random() * 90000) + 10000;
+    id = "" + year + random
+    } while (validate_student_id(id, studentList) === false);
+
+    return id;
 }
 
-function validate_student_id() {
-    // code here
+function validate_student_id(generated_id, students) {
+    // checks if generated id is unique
+    return !students.some(student => student.id === generated_id);
 }
 
