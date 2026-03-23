@@ -6,7 +6,6 @@
 */
 
 function time_now() {
-    // code here
     if (window.clockInterval) return;
 
     const update = () => {
@@ -26,12 +25,87 @@ function time_now() {
     window.clockInterval = setInterval(update, 1000);
 }
 
-function add_student() {
-    // code here
-    const array = [];
+const studentList = [];
 
-    const submit = document.getElementById('form_error');
-    submit.innerHTML = 'Form Error';
+function add_student() {
+    const nameInput = document.getElementById('student_id');
+    const nameValue = nameInput.value.trim();
+
+    const ageInput = document.getElementById('student_age').value;
+    const emailInput = document.getElementById('student_email').value.trim();
+    
+    const courseInput = document.getElementById('course');
+    const courseValue = courseInput.value;
+
+    const errorList = document.getElementById('form_error');
+   
+    const namePattern = /^[a-zA-Z]+\s+[a-zA-Z]+/;
+    const emailPattern = /^[^\s@]+@up\.edu\.ph$/;
+
+    //Reset UI
+    errorList.innerHTML = "";
+    nameInput.style.border = "1px solid #ccc";
+
+    //Validation
+    if (nameValue == "") {
+        showError("Please enter a name.")
+        return;
+    }
+
+    if (nameValue.length < 5){
+        showError("Name must be more than 5 letters long");
+        return;
+    
+    }if (!namePattern.test(nameValue)){
+        showError("Please enter both your first and last name");
+        return;
+    }
+
+    if (ageInput < 18 || ageInput > 99){
+        showError("Input a valid age (18-99)");
+        return;
+    }
+
+    if (!emailPattern.test(emailInput)){
+        showError("Input your valid UP Mail (up.edu.ph)");
+        return;
+    }
+
+    if (courseValue == ""){
+        showError("Choose a course");
+        return;
+    }
+
+    studentList.push({ 
+        name: nameValue, 
+        age: ageInput, 
+        email: emailInput,
+        course: courseValue
+    });
+
+    console.log("Success!! Adding student: ", studentList);
+    alert("Student '" + nameValue + "' has been added.");
+
+    //clear inputs
+    nameInput.value = ''; 
+    document.getElementById('student_age').value = '';
+    document.getElementById('student_email').value = '';
+    courseInput.selectedIndex = 0;
+}
+
+function showError(message){
+    const errorList = document.getElementById('form_error');
+    const nameInput = document.getElementById('student_id');
+
+    const li = document.createElement('li');
+    li.textContent = message;
+    li.style.color = "red";
+    li.style.listStyle = "none";
+    li.style.textAlign = "center";
+    errorList.appendChild(li);
+
+    nameInput.style.border  = "2px solid red";
+
 }
  
 function find_student() {
