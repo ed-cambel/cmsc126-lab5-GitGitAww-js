@@ -161,13 +161,8 @@ function generate_student_id() {
     return id;
 }
 
-<<<<<<< HEAD
-function validate_student_id() {
-   // code here
-=======
 function validate_student_id(generated_id, students) {
     // checks if generated id is unique
     return !students.some(student => student.id === generated_id);
->>>>>>> main
 }
 
