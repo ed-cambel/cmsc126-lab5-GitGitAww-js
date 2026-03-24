@@ -145,7 +145,6 @@ body {
 
   .page_header h1 {
     font-size: 50px;
-    color: #eadf71;
     margin-bottom: 5px;
     font-family: "Montserrat";
     letter-spacing: 3px;
@@ -324,12 +323,80 @@ body {
   }
 }
 
+/* ======= SEARCH BUTTON =======*/
+button[type="button"] {
+    font-family: "Montserrat";
+    background-color: white;
+    color: #043303;
+    padding: 5px 5px;
+    border: 3px solid #043303;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    border-radius: 10px;
+
+    transition: background-color 0.3s ease color 0.3s ease transform 0.1s ease;
+    box-shadow:
+      0 4px 6px rgba(0, 0, 0, 0.1),
+      0 1px 3px rgba(0, 0, 0, 0.08);
+  }
+  button[type="button"]:hover {
+    background-color: #043303;
+    color: white;
+    box-shadow:
+      0 7px 14px rgba(0, 0, 0, 0.1),
+      0 3px 6px rgba(0, 0, 0, 0.08);
+  }
+
+  button[type="button"]:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
 /* ======= DISPLAY PAGE =======*/
+.display_button {
+    font-family: "Montserrat";
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    color: #043303;
+    padding: 5px 5px;
+    border: 3px solid #043303;
+    margin: auto;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 250px;
+    height: 50px;
+
+
+    transition: background-color 0.3s ease color 0.3s ease transform 0.1s ease;
+    box-shadow:
+      0 4px 6px rgba(0, 0, 0, 0.1),
+      0 1px 3px rgba(0, 0, 0, 0.08);
+  }
+
+  .display_button:hover {
+    background-color: #043303;
+    color: white;
+    box-shadow:
+      0 7px 14px rgba(0, 0, 0, 0.1),
+      0 3px 6px rgba(0, 0, 0, 0.08);
+  }
+
+  .display_button:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 .page_header h2{
   font-size: 50px;
+  font-family: "Montserrat";
+  letter-spacing: 3px;
   text-align: center;
   margin-top: 50px;
-  color: #eadf71;
+  color: white;
 }
 
 #display_page .page_header {
@@ -349,7 +416,7 @@ body {
   width: 70%;
   min-height: 300px;
 
-  background: rgba(80, 120, 86, 0.882); /* glass effect */
+  background: rgba(80, 120, 86, 0.882);
   backdrop-filter: blur(10px);
 
   border-radius: 15px;
