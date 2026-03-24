@@ -14,6 +14,7 @@
     <title>Lab 5 - Student Records</title>
     <link rel="stylesheet" type="text/css" href="lab5_styles.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <script src="lab5_scripts.js"></script>
 </head>
 
 <body class="display_page">
@@ -40,42 +41,21 @@
     <main>
         <header class="page_header">
             <h2 id="title">Display Students</h2>
-            <button type="button" class="display_button" onclick="display_student_list()">Display All Students</button>
-
-            <div class = "table_container">
-                <table id="studentTable">
-                    <thead>
-                        <tr>
-                            <th>Student No.</th>
-                            <th>Name</th>
-                            <th>Age</th>
-                            <th>Email</th>
-                            <th>Course</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tableBody">
-                        <!-- Student records will be dynamically inserted here -->
-                        <tr>
-                    <td colspan="5" style="text-align:center;">Click "Display All Students" to view records</td>
-                </tr>
-                    </tbody>
-                </table>
-            </div>
+            <button type="button" class="search_button" onclick="display_student_list()">Display All Students</button>
 
             <div id="displayOutput"></div>
-
         </header>
     </main>
 
     <script src="lab5_scripts.js"></script>
+</body>
 
-    <!--------------- FOOTER SECTION --------------->
+<!--------------- FOOTER SECTION --------------->
 <footer class="footer">
     <hr>
     <p>© 2026 Student Records System [CMSC 126] | All Rights Reserved</p>
     <p>Developed by: Git Git Aww</p>
     <p>Members: E. Cambel, J. Espartero, J. Fallarme, M. Gelvezon</p>
 </footer>
-    <script src="lab5_scripts.js"></script>
-</body>
+
 </html>
