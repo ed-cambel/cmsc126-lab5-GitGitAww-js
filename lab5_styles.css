@@ -319,23 +319,186 @@ body {
   /* ======= Error Display =======*/
   #form_error {
     color: red;
-    font-size: 14px;
+    font-size: 16px;
     margin-top: 20px;
     padding-left: 20px;
+    font-family: "Montserrat";
   }
 }
 
+<<<<<<< Updated upstream
 /* ======= DISPLAYE PAGE =======*/
 #display_page .page_header {
   text-align: center;
+=======
+/* ======= SEARCH BUTTON =======*/
+button[type="button"] {
+  font-family: "Montserrat";
+  background-color: white;
+  color: #043303;
+  padding: 5px 5px;
+  border: 3px solid #043303;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  border-radius: 10px;
+
+  transition: background-color 0.3s ease color 0.3s ease transform 0.1s ease;
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.08);
+}
+button[type="button"]:hover {
+  background-color: #043303;
+  color: white;
+  box-shadow:
+    0 7px 14px rgba(0, 0, 0, 0.1),
+    0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+button[type="button"]:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ======= DISPLAY PAGE =======*/
+.display_button {
+  font-family: "Montserrat";
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: #043303;
+  padding: 5px 5px;
+  border: 3px solid #043303;
+  margin: auto;
+  cursor: pointer;
+  border-radius: 10px;
+  width: 250px;
+  height: 50px;
+
+  transition: background-color 0.3s ease color 0.3s ease transform 0.1s ease;
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.display_button:hover {
+  background-color: #043303;
+  color: white;
+  box-shadow:
+    0 7px 14px rgba(0, 0, 0, 0.1),
+    0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+.display_button:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.display_page .page_header h2 {
+  font-size: 50px;
+  font-family: "Montserrat";
+  letter-spacing: 3px;
+  text-align: center;
+  margin-top: 50px;
+  color: white;
+}
+
+.display_page .page_header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+>>>>>>> Stashed changes
   margin-top: 50px;
 }
 
-#display_page .page_header h2 {
+.display_page .page_header h2 {
   font-size: 40px;
   margin-bottom: 5px;
 }
 
+<<<<<<< Updated upstream
+=======
+.table_container {
+  margin: 30px auto;
+  width: 70%;
+  min-height: 300px;
+
+  background: rgba(80, 120, 86, 0.882);
+  backdrop-filter: blur(10px);
+
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 20px;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  color: white;
+  font-family: "Montserrat";
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: center;
+}
+
+th:nth-child(1),
+td:nth-child(1) {
+  width: 20%;
+} /* Sudent No. */
+
+th:nth-child(2),
+td:nth-child(2) {
+  width: 25%;
+} /* Name */
+
+th:nth-child(3),
+td:nth-child(3) {
+  width: 5%;
+} /* Age */
+
+th:nth-child(4),
+td:nth-child(4) {
+  width: 25%;
+} /* Email */
+
+th:nth-child(5),
+td:nth-child(5) {
+  width: 25%;
+} /* Course */
+
+th {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+tr:nth-child(odd) {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+tr:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+#github_link {
+  font-family: "Montserrat";
+  font-weight: bolder;
+  letter-spacing: 2px;
+  align-items: center;
+}
+>>>>>>> Stashed changes
 /* ======= Footer Section =======*/
 .footer {
   text-align: center;
